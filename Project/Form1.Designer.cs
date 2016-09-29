@@ -1,4 +1,4 @@
-﻿namespace Project
+﻿namespace Soal_1_1
 {
     partial class Form1
     {
