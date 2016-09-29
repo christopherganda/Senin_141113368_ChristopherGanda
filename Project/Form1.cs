@@ -22,11 +22,12 @@ namespace Project
             lblMin.Text = (vsbMin.Maximum-vsbMin.Value).ToString();
             if (vsbMax.Value > vsbMin.Value)
             {
-                vsbMax.Value = vsbMin.Value-1;
+                vsbMax.Value = vsbMin.Value;
+                vsbMin.Value += 1;
                 lblMax.Text = (vsbMax.Maximum - vsbMax.Value).ToString();
             }
-            dtpTanggal.MaxDate = now.AddYears(vsbMin.Value - vsbMin.Maximum);
-            dtpTanggal.MinDate = now.AddYears(vsbMax.Value - vsbMax.Maximum);
+            dtpTanggal.MaxDate = now.AddYears(vsbMin.Value-vsbMin.Maximum  );
+            dtpTanggal.MinDate = now.AddYears(vsbMax.Value-vsbMax.Maximum);
         }
 
         private void vsbMax_Scroll(object sender, ScrollEventArgs e)
