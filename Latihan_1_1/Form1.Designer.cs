@@ -1,4 +1,4 @@
-﻿namespace Soal_1_1
+﻿namespace Latihan_1_1
 {
     partial class Form1
     {
@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dtpTanggal = new System.Windows.Forms.DateTimePicker();
             this.lblMax = new System.Windows.Forms.Label();
             this.lblMin = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,43 +39,40 @@
             this.vsbMax = new System.Windows.Forms.VScrollBar();
             this.vsbMin = new System.Windows.Forms.VScrollBar();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dtpTanggal = new System.Windows.Forms.DateTimePicker();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.ImageList = this.imageList1;
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(683, 328);
+            this.tabControl1.Size = new System.Drawing.Size(483, 328);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dtpTanggal);
             this.tabPage1.Controls.Add(this.lblMax);
             this.tabPage1.Controls.Add(this.lblMin);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.vsbMax);
             this.tabPage1.Controls.Add(this.vsbMin);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.ImageIndex = 0;
+            this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(675, 302);
+            this.tabPage1.Size = new System.Drawing.Size(475, 301);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // dtpTanggal
-            // 
-            this.dtpTanggal.Location = new System.Drawing.Point(89, 117);
-            this.dtpTanggal.Name = "dtpTanggal";
-            this.dtpTanggal.Size = new System.Drawing.Size(200, 20);
-            this.dtpTanggal.TabIndex = 6;
             // 
             // lblMax
             // 
@@ -139,19 +137,34 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Controls.Add(this.dtpTanggal);
+            this.tabPage2.ImageIndex = 0;
+            this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(675, 302);
+            this.tabPage2.Size = new System.Drawing.Size(475, 301);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dtpTanggal
+            // 
+            this.dtpTanggal.Location = new System.Drawing.Point(127, 138);
+            this.dtpTanggal.Name = "dtpTanggal";
+            this.dtpTanggal.Size = new System.Drawing.Size(200, 20);
+            this.dtpTanggal.TabIndex = 7;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "BMC_Elearning_English.jpg");
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 352);
+            this.ClientSize = new System.Drawing.Size(500, 352);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -159,6 +172,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -175,6 +189,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpTanggal;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 
