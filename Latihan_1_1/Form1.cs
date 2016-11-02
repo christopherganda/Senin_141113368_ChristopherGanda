@@ -19,7 +19,7 @@ namespace Latihan_1_1
         static DateTime now = DateTime.Now;
         private void vsbMin_Scroll(object sender, ScrollEventArgs e)
         {
-            lblMin.Text = (vsbMin.Maximum-vsbMin.Value).ToString();
+            lblMin.Text = (vsbMin.Maximum - vsbMin.Value).ToString();
             if (vsbMax.Value > vsbMin.Value)
             {
                 vsbMax.Value = vsbMin.Value;
@@ -27,7 +27,7 @@ namespace Latihan_1_1
                 lblMax.Text = (vsbMax.Maximum - vsbMax.Value).ToString();
             }
             dtpTanggal.MinDate = now.AddYears(vsbMax.Value - vsbMax.Maximum);
-            dtpTanggal.MaxDate = now.AddYears(vsbMin.Value-vsbMin.Maximum  );
+            dtpTanggal.MaxDate = now.AddYears(vsbMin.Value - vsbMin.Maximum);
         }
 
         private void vsbMax_Scroll(object sender, ScrollEventArgs e)

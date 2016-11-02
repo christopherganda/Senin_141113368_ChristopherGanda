@@ -26,21 +26,22 @@ namespace Latihan_2_1
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-             d = monthCalendar1.SelectionRange.Start;
-             nudTanggal.Maximum = DateTime.DaysInMonth(d.Year, (int)nudBulan.Value);
+            d = monthCalendar1.SelectionRange.Start;
+            nudTanggal.Maximum = DateTime.DaysInMonth(d.Year, (int)nudBulan.Value);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             d = monthCalendar1.SelectionRange.Start;
             DateTime awal = monthCalendar1.MinDate;
-            for (DateTime  i = awal; i <= monthCalendar1.MaxDate; i=i.AddDays(1))
+            for (DateTime i = awal; i <= monthCalendar1.MaxDate; i = i.AddDays(1))
             {
-                if (i.DayOfWeek.ToString() == "Sunday" || (i.Day==18 && i.Month==3))
+                if (i.DayOfWeek.ToString() == "Sunday" || (i.Day == 18 && i.Month == 3))
                 {
                     monthCalendar1.AddBoldedDate(i);
                 }
             }
+            monthCalendar1.Refresh();
         }
 
         private void nudTanggal_ValueChanged(object sender, EventArgs e)
@@ -51,8 +52,9 @@ namespace Latihan_2_1
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
-            DateTime pilih = new DateTime(d.Year,(int)nudBulan.Value, (int)nudTanggal.Value);
+            DateTime pilih = new DateTime(d.Year, (int)nudBulan.Value, (int)nudTanggal.Value);
             monthCalendar1.AddAnnuallyBoldedDate(pilih);
+            monthCalendar1.Refresh();
         }
 
         private void btnHapus_Click(object sender, EventArgs e)
@@ -65,6 +67,7 @@ namespace Latihan_2_1
                     monthCalendar1.RemoveAnnuallyBoldedDate(i);
                 }
             }
+            monthCalendar1.Refresh();
         }
     }
 }

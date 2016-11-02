@@ -9,17 +9,48 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Text;
 using System.Reflection;
-
-namespace Latihan_3_1
+using System.IO;
+namespace Latihan_4_1
 {
     public partial class Form1 : Form
     {
-        bool isBold = false, isItalic = false, isUnderline = false;
+        bool isBold = false, isItalic = false, isUnderline = false,cekKosong = false,cekClose=false;
         System.Drawing.FontStyle fontStyle;
         public Form1()
         {
             InitializeComponent();
         }
+        private void tsmiNew_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.Show();
+        }
+        public void save()
+        {
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.Filter = "*.txt(textfile)|*.txt";
+            if (savefile.ShowDialog() == DialogResult.OK)
+            {
+                rtbText.SaveFile(savefile.FileName, RichTextBoxStreamType.PlainText);
+                cekKosong = false;
+            }
+        }
+        private void tsmiOpen_Click(object sender, EventArgs e)
+        {
+            Stream myStream;
+            openFileDialog1.FileName = "";
+            openFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if ((myStream = openFileDialog1.OpenFile()) != null)
+                {
+                    string filename = openFileDialog1.FileName;
+                    string readfiletext = File.ReadAllText(filename);
+                    rtbText.Text = readfiletext; 
+                }
+            }
+        }
+
         public void getFontSize()
         {
             for (int i = 8; i <= 72; i++) tscbFontSize.Items.Add(i);
@@ -205,7 +236,7 @@ namespace Latihan_3_1
         }
         private void ubahFont(string style = null)
         {
-            
+
             int start = rtbText.SelectionStart;
             int length = rtbText.SelectionLength;
             float fontSize;
@@ -226,30 +257,73 @@ namespace Latihan_3_1
                 isUnderline = rtbText.SelectionFont.Underline;
                 checkStyle(style);
                 ubahStyle();
-                rtbText.SelectionFont = new Font(fontFamily,fontSize,fontStyle);
+                rtbText.SelectionFont = new Font(fontFamily, fontSize, fontStyle);
             }
             for (int i = start; i < start + length; i++)
             {
                 rtbText.SelectionChanged -= new System.EventHandler(this.rtbText_SelectionChanged);
                 rtbText.Select(i, 1);
-                if (tscbFontFamily.Text == "")                
-                    fontFamily = rtbText.SelectionFont.FontFamily.Name;                
-                else                
-                    fontFamily = tscbFontFamily.Text;                
-                if (tscbFontSize.Text == "")                
-                    fontSize = rtbText.SelectionFont.Size;                
+                if (tscbFontFamily.Text == "")
+                    fontFamily = rtbText.SelectionFont.FontFamily.Name;
                 else
-                    fontSize = Convert.ToSingle(tscbFontSize.Text);              
+                    fontFamily = tscbFontFamily.Text;
+                if (tscbFontSize.Text == "")
+                    fontSize = rtbText.SelectionFont.Size;
+                else
+                    fontSize = Convert.ToSingle(tscbFontSize.Text);
                 isBold = rtbText.SelectionFont.Bold;
                 isItalic = rtbText.SelectionFont.Italic;
                 isUnderline = rtbText.SelectionFont.Underline;
                 checkStyle(style);
                 ubahStyle();
-                rtbText.SelectionFont = new Font(fontFamily,fontSize,fontStyle);
+                rtbText.SelectionFont = new Font(fontFamily, fontSize, fontStyle);
             }
             rtbText.Focus();
             rtbText.Select(start, length);
             this.rtbText.SelectionChanged += new System.EventHandler(this.rtbText_SelectionChanged);
+        }
+
+        private void tsmiSave_Click(object sender, EventArgs e)
+        {
+            save();
+        }
+        private void exit(FormClosingEventArgs e = null)
+        {
+            if (cekKosong)
+            {
+                DialogResult dialogResult = MessageBox.Show("Apakah anda mau menyimpan?", "Pesan", MessageBoxButtons.YesNoCancel);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    save();
+                    this.Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    cekClose = true;
+                    Application.Exit();
+                }
+                else if (dialogResult == DialogResult.Cancel)
+                {
+                    cekClose = false;
+                    if (e!=null)
+                        e.Cancel = true;
+                }
+            }
+        }
+        private void tsmiExit_Click(object sender, EventArgs e)
+        {
+            exit();
+        }
+
+        private void rtbText_TextChanged(object sender, EventArgs e)
+        {
+            cekKosong = true;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(!cekClose)
+                exit(e);
         }
     }
 }

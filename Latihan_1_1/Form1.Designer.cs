@@ -51,11 +51,11 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.ImageList = this.imageList1;
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(-2, 6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(483, 328);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -164,11 +164,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 352);
+            this.ClientSize = new System.Drawing.Size(470, 369);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -181,13 +180,13 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.VScrollBar vsbMax;
-        private System.Windows.Forms.VScrollBar vsbMin;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label lblMax;
         private System.Windows.Forms.Label lblMin;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.VScrollBar vsbMax;
+        private System.Windows.Forms.VScrollBar vsbMin;
+        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DateTimePicker dtpTanggal;
         private System.Windows.Forms.ImageList imageList1;
     }
