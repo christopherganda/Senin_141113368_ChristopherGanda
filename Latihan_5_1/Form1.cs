@@ -51,7 +51,14 @@ namespace Latihan_5_1
                 }
             }
         }
-
+        public void setBackgroundColor(string text)
+        {
+            this.rtbText.BackColor = Color.FromName(text);
+        }
+        public string getBackgroundColor()
+        {
+            return this.rtbText.BackColor.Name;
+        }
         public void getFontSize()
         {
             for (int i = 8; i <= 72; i++) tscbFontSize.Items.Add(i);
@@ -65,27 +72,36 @@ namespace Latihan_5_1
                 tscbFontFamily.Items.Add(font.Name);
             }
         }
-        public void getFontColor()
+        public void getFontColor(ComboBox a)
         {
-            this.tscbFontColor.ComboBox.DrawMode = DrawMode.OwnerDrawFixed;
-            this.tscbFontColor.ComboBox.DrawItem += new DrawItemEventHandler(tscbFontColor_DrawItem);
+            a.DrawMode = DrawMode.OwnerDrawFixed;
+            a.DrawItem += new DrawItemEventHandler(tscbFontColor_DrawItem);
             Color clr = new Color();
             PropertyInfo[] colors = clr.GetType().GetProperties();
             foreach (PropertyInfo c in colors)
             {
-                this.tscbFontColor.Items.Add(c.Name);
+                a.Items.Add(c.Name);
             }
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            getFontColor();
+            getFontColor(tscbFontColor.ComboBox);
             getFontFamily();
             getFontSize();
             tscbFontColor.SelectedIndex = 10;
             tscbFontColor.Text = "Black";
             tscbFontFamily.SelectedItem = "Calibri";
             tscbFontSize.SelectedItem = 12;
-            ubahFont();
+            ubahFont(); 
+            MdiClient client = Controls.OfType<MdiClient>().First();
+            client.GotFocus += (s, ev) =>
+            {
+                if (!MdiChildren.Any(x => x.Visible))
+                {
+                    client.SendToBack();
+                    rtbText.BringToFront();
+                }
+            };
         }
 
         private void tscbFontColor_DrawItem(object sender, DrawItemEventArgs e)
@@ -332,6 +348,7 @@ namespace Latihan_5_1
             {
                 frmSetting showForm = new frmSetting();
                 showForm.MdiParent = this;
+                showForm.BringToFront();
                 rtbText.SendToBack();
                 showForm.Show();
             }

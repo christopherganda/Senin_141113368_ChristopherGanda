@@ -33,20 +33,20 @@ namespace Latihan_3_1
                 tscbFontFamily.Items.Add(font.Name);
             }
         }
-        public void getFontColor()
+        public void getFontColor(ComboBox a)
         {
-            this.tscbFontColor.ComboBox.DrawMode = DrawMode.OwnerDrawFixed;
-            this.tscbFontColor.ComboBox.DrawItem += new DrawItemEventHandler(tscbFontColor_DrawItem);
+            a.DrawMode = DrawMode.OwnerDrawFixed;
+            a.DrawItem += new DrawItemEventHandler(tscbFontColor_DrawItem);
             Color clr = new Color();
             PropertyInfo[] colors = clr.GetType().GetProperties();
             foreach (PropertyInfo c in colors)
             {
-                this.tscbFontColor.Items.Add(c.Name);
+                a.Items.Add(c.Name);
             }
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            getFontColor();
+            getFontColor(tscbFontColor.ComboBox);
             getFontFamily();
             getFontSize();
             tscbFontColor.SelectedIndex = 10;
