@@ -35,7 +35,10 @@
             this.txtKode = new MetroFramework.Controls.MetroTextBox();
             this.txtNama = new MetroFramework.Controls.MetroTextBox();
             this.txtJumlah = new MetroFramework.Controls.MetroTextBox();
-            this.txtHarga = new MetroFramework.Controls.MetroTextBox();
+            this.txtHpp = new MetroFramework.Controls.MetroTextBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
+            this.txtHargaJual = new MetroFramework.Controls.MetroTextBox();
+            this.btnInput = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -61,18 +64,18 @@
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.Location = new System.Drawing.Point(86, 166);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(50, 19);
+            this.metroLabel3.Size = new System.Drawing.Size(82, 19);
             this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Jumlah";
+            this.metroLabel3.Text = "Jumlah Awal";
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.Location = new System.Drawing.Point(86, 210);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(45, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(74, 19);
             this.metroLabel4.TabIndex = 3;
-            this.metroLabel4.Text = "Harga";
+            this.metroLabel4.Text = "Harga HPP";
             // 
             // txtKode
             // 
@@ -88,8 +91,7 @@
             this.txtKode.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtKode.CustomButton.UseSelectable = true;
             this.txtKode.CustomButton.Visible = false;
-            this.txtKode.Lines = new string[] {
-        "metroTextBox1"};
+            this.txtKode.Lines = new string[0];
             this.txtKode.Location = new System.Drawing.Point(242, 84);
             this.txtKode.MaxLength = 32767;
             this.txtKode.Name = "txtKode";
@@ -101,7 +103,6 @@
             this.txtKode.ShortcutsEnabled = true;
             this.txtKode.Size = new System.Drawing.Size(149, 23);
             this.txtKode.TabIndex = 4;
-            this.txtKode.Text = "metroTextBox1";
             this.txtKode.UseSelectable = true;
             this.txtKode.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtKode.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -120,8 +121,7 @@
             this.txtNama.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtNama.CustomButton.UseSelectable = true;
             this.txtNama.CustomButton.Visible = false;
-            this.txtNama.Lines = new string[] {
-        "metroTextBox1"};
+            this.txtNama.Lines = new string[0];
             this.txtNama.Location = new System.Drawing.Point(242, 124);
             this.txtNama.MaxLength = 32767;
             this.txtNama.Name = "txtNama";
@@ -133,7 +133,6 @@
             this.txtNama.ShortcutsEnabled = true;
             this.txtNama.Size = new System.Drawing.Size(149, 23);
             this.txtNama.TabIndex = 5;
-            this.txtNama.Text = "metroTextBox1";
             this.txtNama.UseSelectable = true;
             this.txtNama.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNama.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -152,8 +151,7 @@
             this.txtJumlah.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtJumlah.CustomButton.UseSelectable = true;
             this.txtJumlah.CustomButton.Visible = false;
-            this.txtJumlah.Lines = new string[] {
-        "metroTextBox1"};
+            this.txtJumlah.Lines = new string[0];
             this.txtJumlah.Location = new System.Drawing.Point(242, 166);
             this.txtJumlah.MaxLength = 32767;
             this.txtJumlah.Name = "txtJumlah";
@@ -165,49 +163,101 @@
             this.txtJumlah.ShortcutsEnabled = true;
             this.txtJumlah.Size = new System.Drawing.Size(149, 23);
             this.txtJumlah.TabIndex = 6;
-            this.txtJumlah.Text = "metroTextBox1";
             this.txtJumlah.UseSelectable = true;
             this.txtJumlah.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtJumlah.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtJumlah.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJumlah_KeyPress);
             // 
-            // txtHarga
+            // txtHpp
             // 
             // 
             // 
             // 
-            this.txtHarga.CustomButton.Image = null;
-            this.txtHarga.CustomButton.Location = new System.Drawing.Point(127, 1);
-            this.txtHarga.CustomButton.Name = "";
-            this.txtHarga.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.txtHarga.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtHarga.CustomButton.TabIndex = 1;
-            this.txtHarga.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtHarga.CustomButton.UseSelectable = true;
-            this.txtHarga.CustomButton.Visible = false;
-            this.txtHarga.Lines = new string[] {
-        "metroTextBox1"};
-            this.txtHarga.Location = new System.Drawing.Point(242, 210);
-            this.txtHarga.MaxLength = 32767;
-            this.txtHarga.Name = "txtHarga";
-            this.txtHarga.PasswordChar = '\0';
-            this.txtHarga.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtHarga.SelectedText = "";
-            this.txtHarga.SelectionLength = 0;
-            this.txtHarga.SelectionStart = 0;
-            this.txtHarga.ShortcutsEnabled = true;
-            this.txtHarga.Size = new System.Drawing.Size(149, 23);
-            this.txtHarga.TabIndex = 7;
-            this.txtHarga.Text = "metroTextBox1";
-            this.txtHarga.UseSelectable = true;
-            this.txtHarga.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtHarga.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtHpp.CustomButton.Image = null;
+            this.txtHpp.CustomButton.Location = new System.Drawing.Point(127, 1);
+            this.txtHpp.CustomButton.Name = "";
+            this.txtHpp.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtHpp.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtHpp.CustomButton.TabIndex = 1;
+            this.txtHpp.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtHpp.CustomButton.UseSelectable = true;
+            this.txtHpp.CustomButton.Visible = false;
+            this.txtHpp.Lines = new string[0];
+            this.txtHpp.Location = new System.Drawing.Point(242, 210);
+            this.txtHpp.MaxLength = 32767;
+            this.txtHpp.Name = "txtHpp";
+            this.txtHpp.PasswordChar = '\0';
+            this.txtHpp.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtHpp.SelectedText = "";
+            this.txtHpp.SelectionLength = 0;
+            this.txtHpp.SelectionStart = 0;
+            this.txtHpp.ShortcutsEnabled = true;
+            this.txtHpp.Size = new System.Drawing.Size(149, 23);
+            this.txtHpp.TabIndex = 7;
+            this.txtHpp.UseSelectable = true;
+            this.txtHpp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtHpp.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtHpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHpp_KeyPress);
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(86, 254);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(71, 19);
+            this.metroLabel5.TabIndex = 8;
+            this.metroLabel5.Text = "Harga Jual";
+            // 
+            // txtHargaJual
+            // 
+            // 
+            // 
+            // 
+            this.txtHargaJual.CustomButton.Image = null;
+            this.txtHargaJual.CustomButton.Location = new System.Drawing.Point(127, 1);
+            this.txtHargaJual.CustomButton.Name = "";
+            this.txtHargaJual.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtHargaJual.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtHargaJual.CustomButton.TabIndex = 1;
+            this.txtHargaJual.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtHargaJual.CustomButton.UseSelectable = true;
+            this.txtHargaJual.CustomButton.Visible = false;
+            this.txtHargaJual.Lines = new string[0];
+            this.txtHargaJual.Location = new System.Drawing.Point(242, 254);
+            this.txtHargaJual.MaxLength = 32767;
+            this.txtHargaJual.Name = "txtHargaJual";
+            this.txtHargaJual.PasswordChar = '\0';
+            this.txtHargaJual.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtHargaJual.SelectedText = "";
+            this.txtHargaJual.SelectionLength = 0;
+            this.txtHargaJual.SelectionStart = 0;
+            this.txtHargaJual.ShortcutsEnabled = true;
+            this.txtHargaJual.Size = new System.Drawing.Size(149, 23);
+            this.txtHargaJual.TabIndex = 9;
+            this.txtHargaJual.UseSelectable = true;
+            this.txtHargaJual.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtHargaJual.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtHargaJual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHargaJual_KeyPress);
+            // 
+            // btnInput
+            // 
+            this.btnInput.Location = new System.Drawing.Point(242, 298);
+            this.btnInput.Name = "btnInput";
+            this.btnInput.Size = new System.Drawing.Size(149, 23);
+            this.btnInput.TabIndex = 10;
+            this.btnInput.Text = "Input";
+            this.btnInput.UseSelectable = true;
+            this.btnInput.Click += new System.EventHandler(this.btnInput_Click);
             // 
             // frmRegisterBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(609, 359);
-            this.Controls.Add(this.txtHarga);
+            this.Controls.Add(this.btnInput);
+            this.Controls.Add(this.txtHargaJual);
+            this.Controls.Add(this.metroLabel5);
+            this.Controls.Add(this.txtHpp);
             this.Controls.Add(this.txtJumlah);
             this.Controls.Add(this.txtNama);
             this.Controls.Add(this.txtKode);
@@ -216,6 +266,7 @@
             this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroLabel1);
             this.Name = "frmRegisterBarang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Item Register";
             this.Load += new System.EventHandler(this.frmRegisterBarang_Load);
             this.ResumeLayout(false);
@@ -232,6 +283,9 @@
         private MetroFramework.Controls.MetroTextBox txtKode;
         private MetroFramework.Controls.MetroTextBox txtNama;
         private MetroFramework.Controls.MetroTextBox txtJumlah;
-        private MetroFramework.Controls.MetroTextBox txtHarga;
+        private MetroFramework.Controls.MetroTextBox txtHpp;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroTextBox txtHargaJual;
+        private MetroFramework.Controls.MetroButton btnInput;
     }
 }

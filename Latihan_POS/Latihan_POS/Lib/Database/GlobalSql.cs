@@ -29,6 +29,5 @@ namespace Latihan_POS
             if (mySqlConn.State != ConnectionState.Closed)
                 mySqlConn.Close();
         }
-
     }
 }

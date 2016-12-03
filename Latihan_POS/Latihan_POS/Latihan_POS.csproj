@@ -92,6 +92,7 @@
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Lib\Database\GlobalSql.cs" />
+    <Compile Include="Lib\function.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

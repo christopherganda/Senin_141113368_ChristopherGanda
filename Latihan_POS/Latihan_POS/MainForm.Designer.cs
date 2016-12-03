@@ -30,6 +30,7 @@
         {
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.btnRegister = new MetroFramework.Controls.MetroButton();
+            this.tileClose = new MetroFramework.Controls.MetroTile();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.SuspendLayout();
@@ -44,6 +45,7 @@
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.splitContainer.Panel1.Controls.Add(this.tileClose);
             this.splitContainer.Panel1.Controls.Add(this.btnRegister);
             // 
             // splitContainer.Panel2
@@ -62,6 +64,18 @@
             this.btnRegister.Text = "Register";
             this.btnRegister.UseSelectable = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // tileClose
+            // 
+            this.tileClose.ActiveControl = null;
+            this.tileClose.Location = new System.Drawing.Point(17, 568);
+            this.tileClose.Name = "tileClose";
+            this.tileClose.Size = new System.Drawing.Size(75, 60);
+            this.tileClose.TabIndex = 1;
+            this.tileClose.Text = "Close";
+            this.tileClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tileClose.UseSelectable = true;
+            this.tileClose.Click += new System.EventHandler(this.tileClose_Click);
             // 
             // MainForm
             // 
@@ -85,6 +99,7 @@
 
         private System.Windows.Forms.SplitContainer splitContainer;
         private MetroFramework.Controls.MetroButton btnRegister;
+        private MetroFramework.Controls.MetroTile tileClose;
 
 
     }
