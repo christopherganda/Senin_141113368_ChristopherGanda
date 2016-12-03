@@ -45,6 +45,10 @@
             // 
             this.splitContainer.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.splitContainer.Panel1.Controls.Add(this.btnRegister);
+            // 
+            // splitContainer.Panel2
+            // 
+            this.splitContainer.Panel2.BackColor = System.Drawing.Color.Aqua;
             this.splitContainer.Size = new System.Drawing.Size(1304, 642);
             this.splitContainer.SplitterDistance = 434;
             this.splitContainer.TabIndex = 0;
