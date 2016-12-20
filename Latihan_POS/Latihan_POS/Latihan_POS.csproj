@@ -79,11 +79,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormList\frmRegisterBarang.cs">
+    <Compile Include="FormList\frmHapus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormList\frmRegisterBarang.Designer.cs">
-      <DependentUpon>frmRegisterBarang.cs</DependentUpon>
+    <Compile Include="FormList\frmHapus.Designer.cs">
+      <DependentUpon>frmHapus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormList\frmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormList\frmRegister.Designer.cs">
+      <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -93,6 +99,36 @@
     </Compile>
     <Compile Include="Lib\Database\GlobalSql.cs" />
     <Compile Include="Lib\function.cs" />
+    <Compile Include="Lib\User Control\BrowseCustomerUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lib\User Control\BrowseCustomerUserControl.Designer.cs">
+      <DependentUpon>BrowseCustomerUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\User Control\CustomBrowseButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Lib\User Control\CustomBrowseButton.Designer.cs">
+      <DependentUpon>CustomBrowseButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\User Control\frmBrowse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lib\User Control\frmBrowse.designer.cs">
+      <DependentUpon>frmBrowse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\User Control\ItemUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lib\User Control\ItemUserControl.Designer.cs">
+      <DependentUpon>ItemUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\User Control\KeyBrowseValueUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lib\User Control\KeyBrowseValueUserControl.Designer.cs">
+      <DependentUpon>KeyBrowseValueUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,11 +137,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormList\frmRegisterBarang.resx">
-      <DependentUpon>frmRegisterBarang.cs</DependentUpon>
+    <EmbeddedResource Include="FormList\frmHapus.resx">
+      <DependentUpon>frmHapus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormList\frmRegister.resx">
+      <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lib\User Control\BrowseCustomerUserControl.resx">
+      <DependentUpon>BrowseCustomerUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lib\User Control\frmBrowse.resx">
+      <DependentUpon>frmBrowse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lib\User Control\ItemUserControl.resx">
+      <DependentUpon>ItemUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lib\User Control\KeyBrowseValueUserControl.resx">
+      <DependentUpon>KeyBrowseValueUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

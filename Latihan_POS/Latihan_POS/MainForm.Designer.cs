@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.btnRegister = new MetroFramework.Controls.MetroButton();
             this.tileClose = new MetroFramework.Controls.MetroTile();
+            this.btnRegister = new MetroFramework.Controls.MetroButton();
+            this.btnHapus = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.SuspendLayout();
@@ -45,6 +46,7 @@
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.splitContainer.Panel1.Controls.Add(this.btnHapus);
             this.splitContainer.Panel1.Controls.Add(this.tileClose);
             this.splitContainer.Panel1.Controls.Add(this.btnRegister);
             // 
@@ -54,16 +56,6 @@
             this.splitContainer.Size = new System.Drawing.Size(1304, 642);
             this.splitContainer.SplitterDistance = 434;
             this.splitContainer.TabIndex = 0;
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.Location = new System.Drawing.Point(17, 15);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(92, 50);
-            this.btnRegister.TabIndex = 0;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseSelectable = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // tileClose
             // 
@@ -76,6 +68,26 @@
             this.tileClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.tileClose.UseSelectable = true;
             this.tileClose.Click += new System.EventHandler(this.tileClose_Click);
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.Location = new System.Drawing.Point(17, 15);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(92, 50);
+            this.btnRegister.TabIndex = 0;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseSelectable = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // btnHapus
+            // 
+            this.btnHapus.Location = new System.Drawing.Point(135, 15);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(87, 50);
+            this.btnHapus.TabIndex = 2;
+            this.btnHapus.Text = "Hapus";
+            this.btnHapus.UseSelectable = true;
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // MainForm
             // 
@@ -100,6 +112,7 @@
         private System.Windows.Forms.SplitContainer splitContainer;
         private MetroFramework.Controls.MetroButton btnRegister;
         private MetroFramework.Controls.MetroTile tileClose;
+        private MetroFramework.Controls.MetroButton btnHapus;
 
 
     }

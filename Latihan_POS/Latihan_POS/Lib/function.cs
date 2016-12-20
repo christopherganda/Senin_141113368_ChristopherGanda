@@ -22,5 +22,14 @@ namespace Latihan_POS
                     ClearAllText(c);
             }
         }
+        public static void Fill<t>(ref t target, object obj)
+        {
+            if (obj != null || Convert.IsDBNull(obj))
+            {
+                t result = default(t);
+                target = result;
+            }
+            else target = (t)obj;
+        }
     }
 }
