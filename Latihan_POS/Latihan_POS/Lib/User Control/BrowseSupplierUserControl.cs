@@ -8,24 +8,24 @@ using System.Windows.Forms;
 
 namespace Latihan_POS.Lib.User_Control
 {
-    public partial class BrowseCustomerUserControl : Latihan_POS.Lib.User_Control.KeyBrowseValueUserControl
+    public partial class BrowseSupplierUserControl : Latihan_POS.Lib.User_Control.KeyBrowseValueUserControl
     {
-        private int _idCust = 0;
+        private int _idSup = 0;
         private string _noHp;
         private string _jenisKel;
         public int idItem
         {
             get
             {
-                if (_idCust == 0) return 0;
-                else return _idCust;
+                if (_idSup == 0) return 0;
+                else return _idSup;
             }
         }
-        public string namaCust
+        public string namaSup
         {
             get
             {
-                return txtValue.Text ;
+                return txtValue.Text;
             }
         }
         public string noHp
@@ -42,28 +42,28 @@ namespace Latihan_POS.Lib.User_Control
                 return _jenisKel;
             }
         }
-        public BrowseCustomerUserControl()
+        public BrowseSupplierUserControl()
         {
             InitializeComponent();
         }
         protected override void HandleBrowse()
-        { 
+        {
             base.HandleBrowse();
-            string query = "select * from customer";
-            frmBrowse browse = new frmBrowse("Customer", query);
+            string query = "select * from supplier";
+            frmBrowse browse = new frmBrowse("Supplier", query);
             DataGridViewRow row = browse.ShowDialog();
-            
+
             if (row != null)
             {
                 this.txtKey.Text = row.Cells["id"].Value.ToString();
-                _idCust = Convert.ToInt32(txtKey.Text);
+                _idSup = Convert.ToInt32(txtKey.Text);
                 this.txtValue.Text = row.Cells["nama"].Value.ToString();
             }
         }
         protected override void HandlePerubahanKey()
         {
             base.HandlePerubahanKey();
-            clsCustomer cust = new clsCustomer(txtKey.Text );
+            clsSupplier cust = new clsSupplier(txtKey.Text);
             _noHp = cust.nomorHp;
             _jenisKel = Convert.ToString(cust.jenisKelamin);
         }

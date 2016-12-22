@@ -28,20 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBrowse = new Latihan_POS.Lib.User_Control.CustomBrowseButton();
             this.txtKey = new MetroFramework.Controls.MetroTextBox();
             this.txtValue = new MetroFramework.Controls.MetroTextBox();
+            this.btnBrowse = new Latihan_POS.Lib.User_Control.CustomBrowseButton();
             this.SuspendLayout();
-            // 
-            // btnBrowse
-            // 
-            this.btnBrowse.BackColor = System.Drawing.Color.LightGray;
-            this.btnBrowse.Location = new System.Drawing.Point(91, -1);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(30, 25);
-            this.btnBrowse.TabIndex = 0;
-            this.btnBrowse.UseSelectable = true;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // txtKey
             // 
@@ -67,7 +57,7 @@
             this.txtKey.SelectionLength = 0;
             this.txtKey.SelectionStart = 0;
             this.txtKey.ShortcutsEnabled = true;
-            this.txtKey.Size = new System.Drawing.Size(93, 24);
+            this.txtKey.Size = new System.Drawing.Size(40, 24);
             this.txtKey.TabIndex = 1;
             this.txtKey.UseSelectable = true;
             this.txtKey.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -89,7 +79,7 @@
             this.txtValue.CustomButton.UseSelectable = true;
             this.txtValue.CustomButton.Visible = false;
             this.txtValue.Lines = new string[0];
-            this.txtValue.Location = new System.Drawing.Point(121, 0);
+            this.txtValue.Location = new System.Drawing.Point(67, 0);
             this.txtValue.MaxLength = 32767;
             this.txtValue.Name = "txtValue";
             this.txtValue.PasswordChar = '\0';
@@ -98,11 +88,21 @@
             this.txtValue.SelectionLength = 0;
             this.txtValue.SelectionStart = 0;
             this.txtValue.ShortcutsEnabled = true;
-            this.txtValue.Size = new System.Drawing.Size(153, 24);
+            this.txtValue.Size = new System.Drawing.Size(139, 24);
             this.txtValue.TabIndex = 2;
             this.txtValue.UseSelectable = true;
             this.txtValue.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtValue.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.BackColor = System.Drawing.Color.LightGray;
+            this.btnBrowse.Location = new System.Drawing.Point(37, -1);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(30, 25);
+            this.btnBrowse.TabIndex = 0;
+            this.btnBrowse.UseSelectable = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // KeyBrowseValueUserControl
             // 
@@ -112,9 +112,7 @@
             this.Controls.Add(this.txtKey);
             this.Controls.Add(this.btnBrowse);
             this.Name = "KeyBrowseValueUserControl";
-            this.Size = new System.Drawing.Size(273, 24);
-            this.Validating += new System.ComponentModel.CancelEventHandler(this.KeyBrowseValueUserControl_Validating);
-            this.Validated += new System.EventHandler(this.KeyBrowseValueUserControl_Validated);
+            this.Size = new System.Drawing.Size(207, 24);
             this.ResumeLayout(false);
 
         }
@@ -122,8 +120,8 @@
         #endregion
 
         private CustomBrowseButton btnBrowse;
-        private MetroFramework.Controls.MetroTextBox txtKey;
-        private MetroFramework.Controls.MetroTextBox txtValue;
+        protected MetroFramework.Controls.MetroTextBox txtValue;
+        public MetroFramework.Controls.MetroTextBox txtKey;
 
     }
 }

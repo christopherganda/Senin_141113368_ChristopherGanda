@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.btnHapus = new MetroFramework.Controls.MetroButton();
             this.tileClose = new MetroFramework.Controls.MetroTile();
             this.btnRegister = new MetroFramework.Controls.MetroButton();
-            this.btnHapus = new MetroFramework.Controls.MetroButton();
+            this.btnTampil = new MetroFramework.Controls.MetroButton();
+            this.btnUpdate = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.SuspendLayout();
@@ -46,6 +48,8 @@
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.splitContainer.Panel1.Controls.Add(this.btnUpdate);
+            this.splitContainer.Panel1.Controls.Add(this.btnTampil);
             this.splitContainer.Panel1.Controls.Add(this.btnHapus);
             this.splitContainer.Panel1.Controls.Add(this.tileClose);
             this.splitContainer.Panel1.Controls.Add(this.btnRegister);
@@ -56,6 +60,16 @@
             this.splitContainer.Size = new System.Drawing.Size(1304, 642);
             this.splitContainer.SplitterDistance = 434;
             this.splitContainer.TabIndex = 0;
+            // 
+            // btnHapus
+            // 
+            this.btnHapus.Location = new System.Drawing.Point(135, 15);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(87, 50);
+            this.btnHapus.TabIndex = 2;
+            this.btnHapus.Text = "Hapus";
+            this.btnHapus.UseSelectable = true;
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // tileClose
             // 
@@ -79,15 +93,25 @@
             this.btnRegister.UseSelectable = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // btnHapus
+            // btnTampil
             // 
-            this.btnHapus.Location = new System.Drawing.Point(135, 15);
-            this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(87, 50);
-            this.btnHapus.TabIndex = 2;
-            this.btnHapus.Text = "Hapus";
-            this.btnHapus.UseSelectable = true;
-            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
+            this.btnTampil.Location = new System.Drawing.Point(249, 15);
+            this.btnTampil.Name = "btnTampil";
+            this.btnTampil.Size = new System.Drawing.Size(87, 50);
+            this.btnTampil.TabIndex = 3;
+            this.btnTampil.Text = "Tampil";
+            this.btnTampil.UseSelectable = true;
+            this.btnTampil.Click += new System.EventHandler(this.btnTampil_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(17, 87);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(87, 50);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseSelectable = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // MainForm
             // 
@@ -113,6 +137,8 @@
         private MetroFramework.Controls.MetroButton btnRegister;
         private MetroFramework.Controls.MetroTile tileClose;
         private MetroFramework.Controls.MetroButton btnHapus;
+        private MetroFramework.Controls.MetroButton btnTampil;
+        private MetroFramework.Controls.MetroButton btnUpdate;
 
 
     }

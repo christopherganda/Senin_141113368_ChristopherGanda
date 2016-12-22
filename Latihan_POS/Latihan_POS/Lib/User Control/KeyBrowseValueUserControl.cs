@@ -12,13 +12,26 @@ namespace Latihan_POS.Lib.User_Control
 {
     public partial class KeyBrowseValueUserControl : UserControl
     {
-        private new ErrorProvider _errorProvider;
-        public event EventHandler KeyValueChange;
         
+        public event EventHandler textboxTextChanged;
+        protected virtual void OnTextboxTextChanged(EventArgs e)
+        {
+            EventHandler handler = this.textboxTextChanged;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
+            
+        }
+        
+        private void handleTextChanged(object sender, EventArgs e)
+        {
+            this.OnTextboxTextChanged(EventArgs.Empty);
+        }
         public KeyBrowseValueUserControl()
         {
             InitializeComponent();
-            txtKey.TextChanged += new EventHandler(txtKey_TextChanged);
+            txtKey.TextChanged += this.handleTextChanged;
         }
         public void SetKey(string value)
         {
@@ -29,19 +42,19 @@ namespace Latihan_POS.Lib.User_Control
             this.txtKey.Text = string.Empty;
             this.txtValue.Text = string.Empty;
         }
-        private void txtKey_TextChanged(object sender, EventArgs e)
+        protected virtual void txtKey_TextChanged(object sender, EventArgs e)
         {
             HandlePerubahanKey();
         }
-        protected void HandlePerubahanKey()
+        protected virtual void HandlePerubahanKey()
         {
 
         }
-        public abstract  void HandleBrowse()
+        protected virtual void HandleBrowse()
         {
 
         }
-        protected void HandleTidakAdaData()
+        protected virtual void HandleTidakAdaData()
         {
 
         }
@@ -62,11 +75,11 @@ namespace Latihan_POS.Lib.User_Control
 
         private void KeyBrowseValueUserControl_Validated(object sender, EventArgs e)
         {
-            _errorProvider.SetError(this.txtKey, "");
+            //_errorProvider.SetError(this.txtKey, "");
         }
         protected void SetErrorProvider(string pesan)
         {
-            this._errorProvider.SetError(this.txtKey, pesan);
+            //this._errorProvider.SetError(this.txtKey, pesan);
         }
     }
 }

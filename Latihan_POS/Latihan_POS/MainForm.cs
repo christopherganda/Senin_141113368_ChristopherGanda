@@ -89,5 +89,43 @@ namespace Latihan_POS
 
             }
         }
+
+        private void btnTampil_Click(object sender, EventArgs e)
+        {
+            if (splitContainer.Panel2.Controls.Count < 1)
+            {
+                MetroFramework.Forms.MetroForm showForm = new FormList.frmTampil();
+                showForm.TopLevel = false;
+                showForm.MdiParent = this;
+                splitContainer.Panel2.Controls.Add(showForm);
+                showForm.Location = new Point((splitContainer.Panel2.Width - showForm.Width) / 2, (splitContainer.Panel2.Height - showForm.Height) / 2);
+                //showForm.WindowState = FormWindowState.Maximized;
+                showForm.Show();
+                showForm.Location = new Point((splitContainer.Panel2.Width - showForm.Width) / 2, (splitContainer.Panel2.Height - showForm.Height) / 2);
+                //Size maxWindowTrackSize = splitContainer.Panel2.ClientSize;
+                //showForm.Size = maxWindowTrackSize;
+
+
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (splitContainer.Panel2.Controls.Count < 1)
+            {
+                MetroFramework.Forms.MetroForm showForm = new FormList.frmUpdate();
+                showForm.TopLevel = false;
+                showForm.MdiParent = this;
+                splitContainer.Panel2.Controls.Add(showForm);
+                showForm.Location = new Point((splitContainer.Panel2.Width - showForm.Width) / 2, (splitContainer.Panel2.Height - showForm.Height) / 2);
+                //showForm.WindowState = FormWindowState.Maximized;
+                showForm.Show();
+                showForm.Location = new Point((splitContainer.Panel2.Width - showForm.Width) / 2, (splitContainer.Panel2.Height - showForm.Height) / 2);
+                //Size maxWindowTrackSize = splitContainer.Panel2.ClientSize;
+                //showForm.Size = maxWindowTrackSize;
+
+
+            }
+        }
     }
 }

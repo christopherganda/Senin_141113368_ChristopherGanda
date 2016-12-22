@@ -91,12 +91,27 @@
     <Compile Include="FormList\frmRegister.Designer.cs">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormList\frmTampil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormList\frmTampil.Designer.cs">
+      <DependentUpon>frmTampil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormList\frmUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormList\frmUpdate.Designer.cs">
+      <DependentUpon>frmUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lib\Class\clsCustomer.cs" />
+    <Compile Include="Lib\Class\clsItem.cs" />
+    <Compile Include="Lib\Class\clsSupplier.cs" />
     <Compile Include="Lib\Database\GlobalSql.cs" />
     <Compile Include="Lib\function.cs" />
     <Compile Include="Lib\User Control\BrowseCustomerUserControl.cs">
@@ -104,6 +119,18 @@
     </Compile>
     <Compile Include="Lib\User Control\BrowseCustomerUserControl.Designer.cs">
       <DependentUpon>BrowseCustomerUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\User Control\BrowseItemUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lib\User Control\BrowseItemUserControl.Designer.cs">
+      <DependentUpon>BrowseItemUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lib\User Control\BrowseSupplierUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lib\User Control\BrowseSupplierUserControl.Designer.cs">
+      <DependentUpon>BrowseSupplierUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Lib\User Control\CustomBrowseButton.cs">
       <SubType>Component</SubType>
@@ -142,6 +169,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormList\frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormList\frmTampil.resx">
+      <DependentUpon>frmTampil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormList\frmUpdate.resx">
+      <DependentUpon>frmUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
