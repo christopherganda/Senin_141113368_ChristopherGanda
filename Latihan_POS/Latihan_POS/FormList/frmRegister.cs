@@ -25,18 +25,13 @@ namespace Latihan_POS.FormList
             {
                 try
                 {
-                    GlobalSql.bukaKoneksi();
-                    string query = "insert into item values(@id,@kode,@nama,@jlh,@hpp,@hrg) ";
-                    MySqlCommand cmd = new MySqlCommand();
-                    cmd.Connection = GlobalSql.mySqlConn;
-                    cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@id", "NULL");
-                    cmd.Parameters.AddWithValue("@kode", txtKode.Text.ToString());
-                    cmd.Parameters.AddWithValue("@nama", txtNama.Text.ToString());
-                    cmd.Parameters.AddWithValue("@jlh", Convert.ToDouble(txtJumlah.Text));
-                    cmd.Parameters.AddWithValue("@hpp", Convert.ToDouble(txtHpp.Text));
-                    cmd.Parameters.AddWithValue("@hrg", Convert.ToDouble(txtHargaJual.Text));
-                    cmd.ExecuteNonQuery();
+                    Dictionary<string, object> parameters = new Dictionary<string, object> { };
+                    parameters.Add("kode_barang", txtKode.Text.ToString());
+                    parameters.Add("nama_barang", txtNama.Text.ToString());
+                    parameters.Add("jumlah_awal", Convert.ToDouble(txtJumlah.Text));
+                    parameters.Add("harga_hpp", Convert.ToDouble(txtHpp.Text));
+                    parameters.Add("harga_jual", Convert.ToDouble(txtHargaJual.Text));
+                    GlobalSql.InsertData("pos.item", parameters);
                     function.ClearAllText(this);
                     MessageBox.Show("Barang berhasil di-input", "Informasi");
 
@@ -73,18 +68,14 @@ namespace Latihan_POS.FormList
             {
                 try
                 {
-                    
-                    GlobalSql.bukaKoneksi();
-                    string query = "insert into supplier values(@id,@nama,@alamat,@nohp,@jenis) ";
-                    MySqlCommand cmd = new MySqlCommand();
-                    cmd.Connection = GlobalSql.mySqlConn;
-                    cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@id", "NULL");
-                    cmd.Parameters.AddWithValue("@nama", mTxtNamaSup.Text.ToString());
-                    cmd.Parameters.AddWithValue("@alamat", mTxtAlamatSup.Text.ToString());
-                    cmd.Parameters.AddWithValue("@nohp", mTxtNoHpSup.Text.ToString());
-                    cmd.Parameters.AddWithValue("@jenis", rboPriaSup.Checked? 1 : 0);
-                    cmd.ExecuteNonQuery();
+
+
+                    Dictionary<string, object> parameters = new Dictionary<string, object> { };
+                    parameters.Add("nama", mTxtNamaSup.Text.ToString());
+                    parameters.Add("alamat", mTxtAlamatSup.Text.ToString());
+                    parameters.Add("no_hp", mTxtNoHpSup.Text.ToString());
+                    parameters.Add("jenis_kelamin", rboPriaSup.Checked? 1 : 0);
+                    GlobalSql.InsertData("supplier", parameters);
                     function.ClearAllText(this);
                     MessageBox.Show("Data supplier berhasil diinput", "Informasi");
 
@@ -106,17 +97,12 @@ namespace Latihan_POS.FormList
                 try
                 {
 
-                    GlobalSql.bukaKoneksi();
-                    string query = "insert into customer values(@id,@nama,@alamat,@nohp,@jenis) ";
-                    MySqlCommand cmd = new MySqlCommand();
-                    cmd.Connection = GlobalSql.mySqlConn;
-                    cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@id", "NULL");
-                    cmd.Parameters.AddWithValue("@nama", txtNamaCust.Text.ToString());
-                    cmd.Parameters.AddWithValue("@alamat", txtAlamatCust.Text.ToString());
-                    cmd.Parameters.AddWithValue("@nohp", txtNoHpCust.Text.ToString());
-                    cmd.Parameters.AddWithValue("@jenis", rboPriaCust.Checked ? 1 : 0);
-                    cmd.ExecuteNonQuery();
+                    Dictionary<string, object> parameters = new Dictionary<string, object> { };
+                    parameters.Add("nama", txtNamaCust.Text.ToString());
+                    parameters.Add("alamat", txtAlamatCust.Text.ToString());
+                    parameters.Add("no_hp", txtNoHpCust.Text.ToString());
+                    parameters.Add("jenis_kelamin", rboPriaCust.Checked ? 1 : 0);
+                    GlobalSql.InsertData("customer", parameters);
                     function.ClearAllText(this);
                     MessageBox.Show("Data customer berhasil diinput", "Informasi");
 
@@ -132,6 +118,16 @@ namespace Latihan_POS.FormList
         private void txtNamaCust_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mTxtNoHpSup_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+        private void txtNoHpCust_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
     }
 }

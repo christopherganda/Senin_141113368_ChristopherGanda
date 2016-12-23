@@ -1,6 +1,6 @@
 ﻿namespace Latihan_POS.FormList
 {
-    partial class frmTampil
+    partial class frmTampilTransaksi
     {
         /// <summary>
         /// Required designer variable.

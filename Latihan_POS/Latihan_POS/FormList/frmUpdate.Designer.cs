@@ -44,6 +44,8 @@
             this.btnUpdateSup = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.mtpBarang = new System.Windows.Forms.TabPage();
+            this.btnBrowse = new Latihan_POS.Lib.User_Control.CustomBrowseButton();
+            this.txtKodeBarang = new MetroFramework.Controls.MetroTextBox();
             this.btnUpdateItem = new MetroFramework.Controls.MetroButton();
             this.txtHargaJual = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
@@ -60,9 +62,10 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.browseItemUserControl1 = new Latihan_POS.Lib.User_Control.BrowseItemUserControl();
-            this.browseSupplierUserControl1 = new Latihan_POS.Lib.User_Control.BrowseSupplierUserControl();
-            this.browseCustomerUserControl1 = new Latihan_POS.Lib.User_Control.BrowseCustomerUserControl();
+            this.txtNamaSupplier = new MetroFramework.Controls.MetroTextBox();
+            this.browseSupplier = new Latihan_POS.Lib.User_Control.CustomBrowseButton();
+            this.browseCust = new Latihan_POS.Lib.User_Control.CustomBrowseButton();
+            this.txtNamaCust = new MetroFramework.Controls.MetroTextBox();
             this.mtpCust.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.mtpBarang.SuspendLayout();
@@ -77,6 +80,7 @@
             this.btnUpdateCust.TabIndex = 9;
             this.btnUpdateCust.Text = "Update";
             this.btnUpdateCust.UseSelectable = true;
+            this.btnUpdateCust.Click += new System.EventHandler(this.btnUpdateCust_Click);
             // 
             // rboWanitaCust
             // 
@@ -127,6 +131,7 @@
             this.txtNoHpCust.UseSelectable = true;
             this.txtNoHpCust.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNoHpCust.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtNoHpCust.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNoHpCust_KeyPress);
             // 
             // txtAlamatCust
             // 
@@ -188,7 +193,8 @@
             // mtpCust
             // 
             this.mtpCust.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.mtpCust.Controls.Add(this.browseCustomerUserControl1);
+            this.mtpCust.Controls.Add(this.txtNamaCust);
+            this.mtpCust.Controls.Add(this.browseCust);
             this.mtpCust.Controls.Add(this.btnUpdateCust);
             this.mtpCust.Controls.Add(this.rboWanitaCust);
             this.mtpCust.Controls.Add(this.rboPriaCust);
@@ -250,6 +256,7 @@
             this.btnUpdateSup.TabIndex = 6;
             this.btnUpdateSup.Text = "Update";
             this.btnUpdateSup.UseSelectable = true;
+            this.btnUpdateSup.Click += new System.EventHandler(this.btnUpdateSup_Click);
             // 
             // metroTabControl1
             // 
@@ -259,7 +266,7 @@
             this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(482, 297);
             this.metroTabControl1.TabIndex = 1;
             this.metroTabControl1.UseSelectable = true;
@@ -267,7 +274,8 @@
             // mtpBarang
             // 
             this.mtpBarang.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.mtpBarang.Controls.Add(this.browseItemUserControl1);
+            this.mtpBarang.Controls.Add(this.btnBrowse);
+            this.mtpBarang.Controls.Add(this.txtKodeBarang);
             this.mtpBarang.Controls.Add(this.btnUpdateItem);
             this.mtpBarang.Controls.Add(this.txtHargaJual);
             this.mtpBarang.Controls.Add(this.metroLabel5);
@@ -283,6 +291,46 @@
             this.mtpBarang.Size = new System.Drawing.Size(474, 255);
             this.mtpBarang.TabIndex = 0;
             this.mtpBarang.Text = "Barang";
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.BackColor = System.Drawing.Color.LightGray;
+            this.btnBrowse.Location = new System.Drawing.Point(353, 12);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(30, 25);
+            this.btnBrowse.TabIndex = 23;
+            this.btnBrowse.UseSelectable = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // txtKodeBarang
+            // 
+            // 
+            // 
+            // 
+            this.txtKodeBarang.CustomButton.Image = null;
+            this.txtKodeBarang.CustomButton.Location = new System.Drawing.Point(99, 1);
+            this.txtKodeBarang.CustomButton.Name = "";
+            this.txtKodeBarang.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtKodeBarang.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtKodeBarang.CustomButton.TabIndex = 1;
+            this.txtKodeBarang.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtKodeBarang.CustomButton.UseSelectable = true;
+            this.txtKodeBarang.CustomButton.Visible = false;
+            this.txtKodeBarang.Lines = new string[0];
+            this.txtKodeBarang.Location = new System.Drawing.Point(233, 13);
+            this.txtKodeBarang.MaxLength = 32767;
+            this.txtKodeBarang.Name = "txtKodeBarang";
+            this.txtKodeBarang.PasswordChar = '\0';
+            this.txtKodeBarang.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtKodeBarang.SelectedText = "";
+            this.txtKodeBarang.SelectionLength = 0;
+            this.txtKodeBarang.SelectionStart = 0;
+            this.txtKodeBarang.ShortcutsEnabled = true;
+            this.txtKodeBarang.Size = new System.Drawing.Size(121, 23);
+            this.txtKodeBarang.TabIndex = 22;
+            this.txtKodeBarang.UseSelectable = true;
+            this.txtKodeBarang.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtKodeBarang.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // btnUpdateItem
             // 
@@ -323,6 +371,7 @@
             this.txtHargaJual.UseSelectable = true;
             this.txtHargaJual.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtHargaJual.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtHargaJual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHargaJual_KeyPress);
             // 
             // metroLabel5
             // 
@@ -363,6 +412,7 @@
             this.txtHpp.UseSelectable = true;
             this.txtHpp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtHpp.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtHpp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHpp_KeyPress);
             // 
             // txtJumlah
             // 
@@ -393,6 +443,7 @@
             this.txtJumlah.UseSelectable = true;
             this.txtJumlah.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtJumlah.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtJumlah.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJumlah_KeyPress);
             // 
             // txtNama
             // 
@@ -467,7 +518,8 @@
             // mtpSupplier
             // 
             this.mtpSupplier.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.mtpSupplier.Controls.Add(this.browseSupplierUserControl1);
+            this.mtpSupplier.Controls.Add(this.browseSupplier);
+            this.mtpSupplier.Controls.Add(this.txtNamaSupplier);
             this.mtpSupplier.Controls.Add(this.rboWanitaSup);
             this.mtpSupplier.Controls.Add(this.rboPriaSup);
             this.mtpSupplier.Controls.Add(this.metroLabel11);
@@ -512,6 +564,7 @@
             this.mTxtNoHpSup.UseSelectable = true;
             this.mTxtNoHpSup.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTxtNoHpSup.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.mTxtNoHpSup.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mTxtNoHpSup_KeyPress);
             // 
             // mTxtAlamatSup
             // 
@@ -570,26 +623,85 @@
             this.metroLabel6.TabIndex = 0;
             this.metroLabel6.Text = "Nama";
             // 
-            // browseItemUserControl1
+            // txtNamaSupplier
             // 
-            this.browseItemUserControl1.Location = new System.Drawing.Point(174, 11);
-            this.browseItemUserControl1.Name = "browseItemUserControl1";
-            this.browseItemUserControl1.Size = new System.Drawing.Size(207, 24);
-            this.browseItemUserControl1.TabIndex = 22;
             // 
-            // browseSupplierUserControl1
             // 
-            this.browseSupplierUserControl1.Location = new System.Drawing.Point(192, 12);
-            this.browseSupplierUserControl1.Name = "browseSupplierUserControl1";
-            this.browseSupplierUserControl1.Size = new System.Drawing.Size(207, 24);
-            this.browseSupplierUserControl1.TabIndex = 10;
             // 
-            // browseCustomerUserControl1
+            this.txtNamaSupplier.CustomButton.Image = null;
+            this.txtNamaSupplier.CustomButton.Location = new System.Drawing.Point(119, 1);
+            this.txtNamaSupplier.CustomButton.Name = "";
+            this.txtNamaSupplier.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNamaSupplier.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNamaSupplier.CustomButton.TabIndex = 1;
+            this.txtNamaSupplier.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNamaSupplier.CustomButton.UseSelectable = true;
+            this.txtNamaSupplier.CustomButton.Visible = false;
+            this.txtNamaSupplier.Lines = new string[0];
+            this.txtNamaSupplier.Location = new System.Drawing.Point(230, 11);
+            this.txtNamaSupplier.MaxLength = 32767;
+            this.txtNamaSupplier.Name = "txtNamaSupplier";
+            this.txtNamaSupplier.PasswordChar = '\0';
+            this.txtNamaSupplier.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNamaSupplier.SelectedText = "";
+            this.txtNamaSupplier.SelectionLength = 0;
+            this.txtNamaSupplier.SelectionStart = 0;
+            this.txtNamaSupplier.ShortcutsEnabled = true;
+            this.txtNamaSupplier.Size = new System.Drawing.Size(141, 23);
+            this.txtNamaSupplier.TabIndex = 10;
+            this.txtNamaSupplier.UseSelectable = true;
+            this.txtNamaSupplier.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNamaSupplier.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            this.browseCustomerUserControl1.Location = new System.Drawing.Point(170, 8);
-            this.browseCustomerUserControl1.Name = "browseCustomerUserControl1";
-            this.browseCustomerUserControl1.Size = new System.Drawing.Size(207, 24);
-            this.browseCustomerUserControl1.TabIndex = 10;
+            // browseSupplier
+            // 
+            this.browseSupplier.BackColor = System.Drawing.Color.LightGray;
+            this.browseSupplier.Location = new System.Drawing.Point(370, 10);
+            this.browseSupplier.Name = "browseSupplier";
+            this.browseSupplier.Size = new System.Drawing.Size(30, 25);
+            this.browseSupplier.TabIndex = 11;
+            this.browseSupplier.UseSelectable = true;
+            this.browseSupplier.Click += new System.EventHandler(this.browseSupplier_Click);
+            // 
+            // browseCust
+            // 
+            this.browseCust.BackColor = System.Drawing.Color.LightGray;
+            this.browseCust.Location = new System.Drawing.Point(349, 8);
+            this.browseCust.Name = "browseCust";
+            this.browseCust.Size = new System.Drawing.Size(30, 25);
+            this.browseCust.TabIndex = 10;
+            this.browseCust.UseSelectable = true;
+            this.browseCust.Click += new System.EventHandler(this.browseCust_Click);
+            // 
+            // txtNamaCust
+            // 
+            // 
+            // 
+            // 
+            this.txtNamaCust.CustomButton.Image = null;
+            this.txtNamaCust.CustomButton.Location = new System.Drawing.Point(89, 1);
+            this.txtNamaCust.CustomButton.Name = "";
+            this.txtNamaCust.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNamaCust.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNamaCust.CustomButton.TabIndex = 1;
+            this.txtNamaCust.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNamaCust.CustomButton.UseSelectable = true;
+            this.txtNamaCust.CustomButton.Visible = false;
+            this.txtNamaCust.Lines = new string[0];
+            this.txtNamaCust.Location = new System.Drawing.Point(240, 9);
+            this.txtNamaCust.MaxLength = 32767;
+            this.txtNamaCust.Name = "txtNamaCust";
+            this.txtNamaCust.PasswordChar = '\0';
+            this.txtNamaCust.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNamaCust.SelectedText = "";
+            this.txtNamaCust.SelectionLength = 0;
+            this.txtNamaCust.SelectionStart = 0;
+            this.txtNamaCust.ShortcutsEnabled = true;
+            this.txtNamaCust.Size = new System.Drawing.Size(111, 23);
+            this.txtNamaCust.TabIndex = 11;
+            this.txtNamaCust.UseSelectable = true;
+            this.txtNamaCust.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNamaCust.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // frmUpdate
             // 
@@ -644,8 +756,11 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel6;
-        private Lib.User_Control.BrowseItemUserControl browseItemUserControl1;
-        private Lib.User_Control.BrowseCustomerUserControl browseCustomerUserControl1;
-        private Lib.User_Control.BrowseSupplierUserControl browseSupplierUserControl1;
+        private Lib.User_Control.CustomBrowseButton btnBrowse;
+        private MetroFramework.Controls.MetroTextBox txtKodeBarang;
+        private MetroFramework.Controls.MetroTextBox txtNamaCust;
+        private Lib.User_Control.CustomBrowseButton browseCust;
+        private Lib.User_Control.CustomBrowseButton browseSupplier;
+        private MetroFramework.Controls.MetroTextBox txtNamaSupplier;
     }
 }

@@ -37,10 +37,6 @@ namespace Latihan_POS.Lib.User_Control
             this._isSelected = true;
             this.Close();
         }
-        public Dictionary<string, string> getData()
-        {
-            return this.data;
-        }
 
         private void dgvBrowseClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -44,10 +44,10 @@ namespace Latihan_POS
                     cmdText += ", ";
                 }
                 cmdText += parameter.Key;
-                cmd.Parameters.AddWithValue('@' + parameter.Key, parameter.Value);
+                cmd.Parameters.AddWithValue('@' +parameter.Key, parameter.Value);
                 i++;
             }
-            cmdText += ", created_at, updated_at) VALUES (";
+            cmdText += ", waktu_buat, waktu_ubah) VALUES (";
             cmd.Parameters.AddWithValue("@created_at", DateTime.Now);
             cmd.Parameters.AddWithValue("@updated_at", DateTime.Now);
             i = 0;
@@ -91,7 +91,7 @@ namespace Latihan_POS
                 cmd.Parameters.AddWithValue('@' + parameter.Key, parameter.Value);
                 i++;
             }
-            cmdText += ", updated_at = @updated_at WHERE id = @id";
+            cmdText += ", waktu_ubah = @updated_at WHERE id = @id";
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@updated_at", DateTime.Now);
             cmd.CommandText = cmdText;
@@ -130,6 +130,7 @@ namespace Latihan_POS
 
         public static DataTable SelectData(string table)
         {
+            
             bukaKoneksi();
             string select = "SELECT * FROM " + table;
             MySqlDataAdapter da = new MySqlDataAdapter(select, mySqlConn);

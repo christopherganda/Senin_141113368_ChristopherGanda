@@ -13,25 +13,9 @@ namespace Latihan_POS.Lib.User_Control
     public partial class KeyBrowseValueUserControl : UserControl
     {
         
-        public event EventHandler textboxTextChanged;
-        protected virtual void OnTextboxTextChanged(EventArgs e)
-        {
-            EventHandler handler = this.textboxTextChanged;
-            if (handler != null)
-            {
-                handler(this, e);
-            }
-            
-        }
-        
-        private void handleTextChanged(object sender, EventArgs e)
-        {
-            this.OnTextboxTextChanged(EventArgs.Empty);
-        }
         public KeyBrowseValueUserControl()
         {
             InitializeComponent();
-            txtKey.TextChanged += this.handleTextChanged;
         }
         public void SetKey(string value)
         {
@@ -42,7 +26,7 @@ namespace Latihan_POS.Lib.User_Control
             this.txtKey.Text = string.Empty;
             this.txtValue.Text = string.Empty;
         }
-        protected virtual void txtKey_TextChanged(object sender, EventArgs e)
+        private  void txtKey_TextChanged(object sender, EventArgs e)
         {
             HandlePerubahanKey();
         }

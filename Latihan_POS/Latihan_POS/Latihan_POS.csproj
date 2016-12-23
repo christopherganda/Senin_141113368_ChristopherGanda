@@ -97,6 +97,12 @@
     <Compile Include="FormList\frmTampil.Designer.cs">
       <DependentUpon>frmTampil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormList\frmTampilTransaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormList\frmTampilTransaksi.Designer.cs">
+      <DependentUpon>frmTampilTransaksi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormList\frmUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,12 @@
     <Compile Include="Lib\Class\clsCustomer.cs" />
     <Compile Include="Lib\Class\clsItem.cs" />
     <Compile Include="Lib\Class\clsSupplier.cs" />
+    <Compile Include="Lib\Custom Form\frmViewGlobal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lib\Custom Form\frmViewGlobal.Designer.cs">
+      <DependentUpon>frmViewGlobal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lib\Database\GlobalSql.cs" />
     <Compile Include="Lib\function.cs" />
     <Compile Include="Lib\User Control\BrowseCustomerUserControl.cs">
@@ -170,14 +182,14 @@
     <EmbeddedResource Include="FormList\frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormList\frmTampil.resx">
-      <DependentUpon>frmTampil.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormList\frmUpdate.resx">
       <DependentUpon>frmUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lib\Custom Form\frmViewGlobal.resx">
+      <DependentUpon>frmViewGlobal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lib\User Control\BrowseCustomerUserControl.resx">
       <DependentUpon>BrowseCustomerUserControl.cs</DependentUpon>
