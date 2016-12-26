@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.btnUpdate = new MetroFramework.Controls.MetroButton();
+            this.btnTampil = new MetroFramework.Controls.MetroButton();
             this.btnHapus = new MetroFramework.Controls.MetroButton();
             this.tileClose = new MetroFramework.Controls.MetroTile();
             this.btnRegister = new MetroFramework.Controls.MetroButton();
-            this.btnTampil = new MetroFramework.Controls.MetroButton();
-            this.btnUpdate = new MetroFramework.Controls.MetroButton();
+            this.btnTampilTransaksi = new MetroFramework.Controls.MetroButton();
+            this.btnTransaksi = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.SuspendLayout();
@@ -48,6 +50,8 @@
             // splitContainer.Panel1
             // 
             this.splitContainer.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.splitContainer.Panel1.Controls.Add(this.btnTransaksi);
+            this.splitContainer.Panel1.Controls.Add(this.btnTampilTransaksi);
             this.splitContainer.Panel1.Controls.Add(this.btnUpdate);
             this.splitContainer.Panel1.Controls.Add(this.btnTampil);
             this.splitContainer.Panel1.Controls.Add(this.btnHapus);
@@ -60,6 +64,26 @@
             this.splitContainer.Size = new System.Drawing.Size(1304, 642);
             this.splitContainer.SplitterDistance = 434;
             this.splitContainer.TabIndex = 0;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(17, 87);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(87, 50);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseSelectable = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnTampil
+            // 
+            this.btnTampil.Location = new System.Drawing.Point(249, 15);
+            this.btnTampil.Name = "btnTampil";
+            this.btnTampil.Size = new System.Drawing.Size(87, 50);
+            this.btnTampil.TabIndex = 3;
+            this.btnTampil.Text = "Tampil";
+            this.btnTampil.UseSelectable = true;
+            this.btnTampil.Click += new System.EventHandler(this.btnTampil_Click);
             // 
             // btnHapus
             // 
@@ -93,25 +117,25 @@
             this.btnRegister.UseSelectable = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // btnTampil
+            // btnTampilTransaksi
             // 
-            this.btnTampil.Location = new System.Drawing.Point(249, 15);
-            this.btnTampil.Name = "btnTampil";
-            this.btnTampil.Size = new System.Drawing.Size(87, 50);
-            this.btnTampil.TabIndex = 3;
-            this.btnTampil.Text = "Tampil";
-            this.btnTampil.UseSelectable = true;
-            this.btnTampil.Click += new System.EventHandler(this.btnTampil_Click);
+            this.btnTampilTransaksi.Location = new System.Drawing.Point(135, 87);
+            this.btnTampilTransaksi.Name = "btnTampilTransaksi";
+            this.btnTampilTransaksi.Size = new System.Drawing.Size(87, 50);
+            this.btnTampilTransaksi.TabIndex = 5;
+            this.btnTampilTransaksi.Text = "Tampil Transaksi";
+            this.btnTampilTransaksi.UseSelectable = true;
+            this.btnTampilTransaksi.Click += new System.EventHandler(this.btnTampilTransaksi_Click);
             // 
-            // btnUpdate
+            // btnTransaksi
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(17, 87);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(87, 50);
-            this.btnUpdate.TabIndex = 4;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseSelectable = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnTransaksi.Location = new System.Drawing.Point(249, 87);
+            this.btnTransaksi.Name = "btnTransaksi";
+            this.btnTransaksi.Size = new System.Drawing.Size(87, 50);
+            this.btnTransaksi.TabIndex = 6;
+            this.btnTransaksi.Text = "Transaksi";
+            this.btnTransaksi.UseSelectable = true;
+            this.btnTransaksi.Click += new System.EventHandler(this.btnTransaksi_Click);
             // 
             // MainForm
             // 
@@ -139,7 +163,7 @@
         private MetroFramework.Controls.MetroButton btnHapus;
         private MetroFramework.Controls.MetroButton btnTampil;
         private MetroFramework.Controls.MetroButton btnUpdate;
-
-
+        private MetroFramework.Controls.MetroButton btnTampilTransaksi;
+        private MetroFramework.Controls.MetroButton btnTransaksi;
     }
 }

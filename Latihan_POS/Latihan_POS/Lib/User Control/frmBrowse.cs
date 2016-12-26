@@ -16,7 +16,6 @@ namespace Latihan_POS.Lib.User_Control
     {
         private string tabel;
         private Dictionary<string, string> data;
-        private DataView _allData;
         private Action<DataGridViewRow> _handleSelect;
         private Boolean _isSelected = false;
         private DataTable dt ;
@@ -32,6 +31,10 @@ namespace Latihan_POS.Lib.User_Control
                 _handleSelect = defaultHandleSelect;
             else _handleSelect = overrideHandleSelect;
         }
+        public Dictionary<string, string> getData()
+        {
+            return this.data;
+        }
         private void defaultHandleSelect(DataGridViewRow row)
         {
             this._isSelected = true;
@@ -40,7 +43,12 @@ namespace Latihan_POS.Lib.User_Control
 
         private void dgvBrowseClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex>-1){
+            data = new Dictionary<string, string> { };
+            foreach (DataGridViewColumn col in dgvBrowse.Columns)
+            {
+                data.Add(col.Name, dgvBrowse[col.Index, e.RowIndex].Value.ToString());
+            }
+            if (e.RowIndex>-1){
                 if(this.dgvBrowse.SelectedRows.Count>0){
                     _handleSelect(this.dgvBrowse.SelectedRows[0]);
 

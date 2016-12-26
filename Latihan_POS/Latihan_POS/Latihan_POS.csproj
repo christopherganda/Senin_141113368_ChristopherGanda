@@ -103,6 +103,12 @@
     <Compile Include="FormList\frmTampilTransaksi.Designer.cs">
       <DependentUpon>frmTampilTransaksi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormList\frmTransaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormList\frmTransaksi.Designer.cs">
+      <DependentUpon>frmTransaksi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormList\frmUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormList\frmRegister.resx">
       <DependentUpon>frmRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormList\frmTransaksi.resx">
+      <DependentUpon>frmTransaksi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormList\frmUpdate.resx">
       <DependentUpon>frmUpdate.cs</DependentUpon>
